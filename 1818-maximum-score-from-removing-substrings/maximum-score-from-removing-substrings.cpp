@@ -1,6 +1,8 @@
 class Solution {
 public:
     int func(char t, char cmp, string &s, int val){
+        //code by vishu badmos 
+        // badmashi nahi mitar 
         int ans = 0;
         stack<int>st;
         for(int i=0;i<s.length();i++){
