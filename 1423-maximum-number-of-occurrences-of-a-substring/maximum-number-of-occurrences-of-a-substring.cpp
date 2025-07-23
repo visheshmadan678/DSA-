@@ -8,7 +8,6 @@ public:
         int ans = INT_MIN;
         for (int i = 0; i <= n - minSize; i++) {
             string temp = s.substr(i, minSize); // take the length of the string as min size
-            cout<<temp<<endl;
             unordered_set<char> st(temp.begin(), temp.end());
             if (st.size() <= maxLetters)
                 mp[temp]++;
