@@ -1,8 +1,8 @@
 class Solution {
 public:
     int maxFreq(string s, int maxLetters, int minSize, int maxSize) {
-        // i want the substring of length minsize all the substrings of length
-        // min size and return the maximum of them
+        // code by vishu badmos 
+        // badmashi nhi mitar 
         int n = s.length();
         unordered_map<string, int> mp;
         int ans = INT_MIN;
