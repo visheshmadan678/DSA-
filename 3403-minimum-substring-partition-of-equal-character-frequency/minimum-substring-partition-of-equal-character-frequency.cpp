@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isValid(vector<int>& freq, int length) {
+    bool isValid(vector<int>& freq) {
         int target = -1;
         for (int count : freq) {
             if (count == 0) continue;
@@ -19,7 +19,7 @@ public:
         for (int i = idx; i < str.length(); ++i) {
             freq[str[i] - 'a']++;
             int len = i - idx + 1;
-            if (isValid(freq, len)) {
+            if (isValid(freq)) {
                 take = min(take, 1 + recursion(i + 1, str, dp));
             }
         }
