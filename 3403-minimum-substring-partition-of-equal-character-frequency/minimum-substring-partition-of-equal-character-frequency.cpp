@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isValid(const vector<int>& freq, int length) {
+    bool isValid(vector<int>& freq, int length) {
         int target = -1;
         for (int count : freq) {
             if (count == 0) continue;
