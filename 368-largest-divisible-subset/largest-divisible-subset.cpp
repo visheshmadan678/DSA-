@@ -21,13 +21,15 @@ public:
                 }
             }
        }
-       for(auto it:parent)cout<<it<<" ";
+      
+
        vector<int>ans;
        while(lisindex!=-1){
             ans.push_back(nums[lisindex]);
             lisindex = parent[lisindex];
        }
-       reverse(ans.begin(),ans.end());
+        reverse(ans.begin(),ans.end());
+
         return ans;
     }
 };
