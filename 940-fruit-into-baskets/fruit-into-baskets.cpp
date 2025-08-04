@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //code by vishu badmos
+    //badmashi nahi mitar 
     int totalFruit(vector<int>& fruits) {
         int left = 0, n = fruits.size();
         int right = 0;
