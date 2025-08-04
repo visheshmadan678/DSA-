@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //code by vishu badmos 
+    //brute force is working fine badmashi nahi mitar
     bool valid(int num){
         //just check that number 
         string str = to_string(num);
