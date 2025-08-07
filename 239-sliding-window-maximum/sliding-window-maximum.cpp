@@ -10,7 +10,6 @@ public:
                 maxi = nums[i];
                 idx = i; // change the value of the index
             }
-            
             if(i>=k-1){
                 ans.push_back(maxi); // push the maxi into the answer 
                 if(idx == i - k +1){
