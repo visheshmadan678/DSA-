@@ -12,7 +12,6 @@ public:
         products[0] = nums[0] % mod;
 
         vector<int>ans;
-
         for(auto it:queries){
             int start = it[0]; // take the start point
             int end = it[1];  // take the end point
@@ -22,7 +21,6 @@ public:
             }
             ans.push_back(product % mod);
         }
-
         return ans;
     }
 };
