@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //not done by me i saw a diagram in the comment box and i got the approach
+    //code only written by vishu badmos
     int maxDistance(vector<vector<int>>& grid) {
         //the question arises how to implement it 
         int distance = 0;
