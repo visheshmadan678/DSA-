@@ -1,27 +1,24 @@
 class Solution {
 public:
     bool isValid(string s) {
-        if(s=="babcc" || s=="abbcc")return false;
-        stack<int>st;
-        char last_ele;
-        for(int i=0;i<s.length();i++){
-            
-            if(!st.empty() && st.top()=='a' && s[i]=='b'){
-                st.pop();
-                st.push(s[i]);
-                continue;
+        string temp = "";
+        for(auto it:s){
+            temp.push_back(it);
+            //if the last three charcters of the temp form a string abc then remove it 
+            int size = temp.size();
+            if(temp.size()>=3){
+            int a = temp[size-1];
+            int b = temp[size-2];
+            int c = temp[size-3];
+            if(a=='c' && b=='b' && c =='a'){
+                temp.pop_back();
+                temp.pop_back();
+                temp.pop_back(); 
             }
-
-            if(!st.empty() && st.top()=='b' && s[i]=='c'){
-                st.pop(); // remove the element from the stack 
-                // and this time don't insert the c also because we got a sequence of three
-                continue;
             }
-
-            st.push(s[i]); // push the characters into the string 
         }
 
-        if(st.empty())return true;
+        if(temp.empty())return true;
 
         return false;
     }
