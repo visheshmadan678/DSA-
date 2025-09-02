@@ -1,5 +1,8 @@
 class Solution {
 public:
+    //thought of the solution but was not able to implement
+    //debugged by chat gpt 
+    // code not by vishu badmos
     bool intersect(pair<int,int> a1, pair<int,int> a2, pair<int,int> b1, pair<int,int> b2) {
         return !(a2.first <= b1.first || b2.first <= a1.first ||
                  a2.second <= b1.second || b2.second <= a1.second);
