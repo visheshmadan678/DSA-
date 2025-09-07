@@ -14,9 +14,9 @@ public:
     vector<int>nums;
     void inorder(TreeNode *root){
         if(!root)return;
-        if(root->left)inorder(root->left);
+        inorder(root->left);
         nums.push_back(root->val); // push the roots value into the nums
-        if(root->right)inorder(root->right);
+        inorder(root->right);
     }
     bool findTarget(TreeNode* root, int target) {
         inorder(root);
