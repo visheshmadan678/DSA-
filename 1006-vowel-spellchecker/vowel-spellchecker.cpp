@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //not done by me kyuki mera man nhi tha kuch karne ka aaj 
+    // kyuki maine company ke test mein hug diya tha 
     vector<string> spellchecker(vector<string>& wordlist, vector<string>& queries) {
         unordered_set<string> exactSet(wordlist.begin(), wordlist.end()); // exact matches
         unordered_map<string, string> caseMap;   // lowercase -> first word
