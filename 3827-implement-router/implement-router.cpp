@@ -1,5 +1,6 @@
 
-
+//not solved by me 
+//logic was same for the binary seaarch but i dont know what's happening here 
 struct Packet {
     int source, destination, timestamp;
     bool operator==(const Packet &o) const {
