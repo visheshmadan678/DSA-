@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //not implemented by me 
+    // i used chat gpt 
     int minSplitMerge(vector<int>& nums1, vector<int>& nums2) {
         queue<pair<vector<int>, int>> q; 
         set<vector<int>> visited; 
