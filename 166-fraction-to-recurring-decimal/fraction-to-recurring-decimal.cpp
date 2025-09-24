@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //NOT SOLVED BY ME
     string fractionToDecimal(int numerator, int denominator) {
         if (numerator == 0) return "0";
         string result;
@@ -13,14 +14,13 @@ public:
         // integer part
         result += to_string(n / d);
         long long rem = n % d;
-        if (rem == 0) return result; // no fractional part
+        if (rem == 0) return result; 
 
         result += ".";
-        unordered_map<long long, int> seen; // remainder -> position in string
+        unordered_map<long long, int> seen; 
 
         while (rem != 0) {
             if (seen.count(rem)) {
-                // repeating cycle detected
                 result.insert(seen[rem], "(");
                 result += ")";
                 break;
