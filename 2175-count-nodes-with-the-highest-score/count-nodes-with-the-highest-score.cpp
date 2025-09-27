@@ -2,6 +2,7 @@ class Solution {
 public:
     unordered_map<long long,long long>mp;
     int n;
+    long long maxi = LLONG_MIN;
     int dfs(int node, unordered_map<int,vector<int>>&adj, vector<int>&visited){
         visited[node] = 1; // mark as visited
         vector<int>score;
@@ -12,8 +13,8 @@ public:
         long long product = 1;
         for(auto &it:score)product *= it;
         long long upward = n - sum - 1;
-        if(node!=0)mp[node] = upward * product; // push the score of the every node
-        else mp[node] = product;
+        if(node!=0){mp[node] = upward * product; maxi = max(maxi,upward * product);} // push the score of the every node
+        else{ mp[node] = product; maxi = max(maxi,product);};
         return sum; // every node will return the sum of its subtrees
     }
     int countHighestScoreNodes(vector<int>& parents) {
@@ -27,8 +28,6 @@ public:
        }
        vector<int>visited(parents.size(),0);
        dfs(0,adj,visited);
-       long long maxi = LLONG_MIN;
-       for(auto &it:mp)maxi = max(it.second,maxi);
        long long count = 0;
        for(auto &it:mp){
             if(it.second == maxi)count++;
