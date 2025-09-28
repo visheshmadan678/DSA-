@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //code by vishu badmos
     bool check_triangle(int a, int b, int c){
         return (a + b > c) && (b + c > a) && (a + c > b);
     }
