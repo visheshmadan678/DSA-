@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //not solved by me i got the intusion but did not thought about the prefix sum 
     int minimizeArrayValue(vector<int>& nums) {
         long long prefixSum = 0;
         int result = 0;
