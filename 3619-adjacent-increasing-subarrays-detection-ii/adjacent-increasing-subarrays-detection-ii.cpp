@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //code by vishu badmos 
+    //badmashi nahi mitar 
     int maxIncreasingSubarrays(vector<int>&arr) {
         vector<int> nums;
         int i = 0;
@@ -35,7 +37,6 @@ public:
         } else {
             ans = max(ans, (nums[0] - 1) / 2);
         }
-
         return ans;
     }
 };
