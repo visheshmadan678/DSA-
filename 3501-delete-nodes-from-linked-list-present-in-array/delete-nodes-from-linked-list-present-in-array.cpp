@@ -10,6 +10,8 @@
  */
 class Solution {
 public:
+    //code by vishu badmos 
+    //badmashi nhi mitar 
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
         //i can create a new list also right ? who said i cannot do it like this 
         unordered_set<int>st(nums.begin(),nums.end());
