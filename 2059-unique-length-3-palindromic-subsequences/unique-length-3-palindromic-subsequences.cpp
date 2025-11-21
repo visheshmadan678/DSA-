@@ -1,46 +1,36 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 class Solution {
 public:
     int countPalindromicSubsequence(string s) {
-        int n = s.size();
+        unordered_set<int>st;
+        vector<int>nums(26,0);
+        int size = s.length();
 
-        // prefix[i][c] = count of char 'a' + c in s[0..i]
-        // suffix[i][c] = count of char 'a' + c in s[i..n-1]
-        vector<array<int, 26>> prefix(n), suffix(n);
+        vector<vector<int>>prefix(size); // i will take these arrays to maintain that charcters 
+        vector<vector<int>>suffix(size); // same for this one also 
 
-        array<int, 26> cnt{};
-        cnt.fill(0);
-
-        // Build prefix
-        for (int i = 0; i < n; i++) {
-            cnt[s[i] - 'a']++;
-            prefix[i] = cnt;
+        for(int i=0;i<size;i++){
+            nums[s[i]-'a']++; // increase the value of that 
+            prefix[i] = nums; // change value of every value of prefix
         }
+        
+        vector<int>temp(26,0);
 
-        // Build suffix
-        cnt.fill(0);
-        for (int i = n - 1; i >= 0; i--) {
-            cnt[s[i] - 'a']++;
-            suffix[i] = cnt;
+        for(int i=size-1;i>=0;i--){
+            temp[s[i]-'a']++;
+            suffix[i] = temp;
         }
+        
 
-        // Use an unordered_set<int> to store unique palindromes
-        // Encode each palindrome "x y x" as key = (x_index * 26 + y_index)
-        unordered_set<int> st;
-
-        for (int i = 1; i <= n - 2; i++) {
-            int mid = s[i] - 'a';  // middle character index
-
-            for (int j = 0; j < 26; j++) {
-                if (prefix[i - 1][j] > 0 && suffix[i + 1][j] > 0) {
-                    int key = j * 26 + mid; // encode (outer_char, mid_char)
-                    st.insert(key);         // duplicates auto-ignored
+        for(int i=1;i<=size-2;i++){
+            //now i have to count for every string
+            for(int j=0;j<26;j++){
+                if(prefix[i-1][j]!=0 && suffix[i+1][j]!=0){
+                    //it means we got a palidrome
+                    st.insert(26 * j + (s[i]-'a'));
                 }
             }
         }
 
-        return (int)st.size();
+        return st.size();
     }
 };
