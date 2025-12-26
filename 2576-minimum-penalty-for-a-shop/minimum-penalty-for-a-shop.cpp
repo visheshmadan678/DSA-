@@ -1,5 +1,7 @@
 class Solution {
 public:
+    //code by vishu badmos 
+    //badmashi nhi mitar
     int bestClosingTime(string customers) {
         int size = customers.size(); // represents the size of our array
         vector<long long>prefix(size+1); //will make this array on the basis of 
