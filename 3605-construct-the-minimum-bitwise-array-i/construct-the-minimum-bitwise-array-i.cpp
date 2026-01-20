@@ -1,21 +1,32 @@
 class Solution {
 public:
     vector<int> minBitwiseArray(vector<int>& nums) {
-        //brute force will work fine 
-        //if the second version comes tommoroow we wil work on it tommroow 
-        vector<int>answer;
-        for(auto &it:nums){
-            if(it == 2)answer.push_back(-1);
-            else {
-                //when the number is in range 3 to 1000
-                int x = 1;
-                while(x < it && (x | (x+1)) != it){
-                    x++;
-                }
-                //it means now x | x+1 == it
-                answer.push_back(x);
+        int n = nums.size();
+        vector<int> ans(n);
+
+        for (int i = 0; i < n; ++i) {
+            int x = nums[i];
+            int trailingOnes = 0;
+            int temp = x;
+            while (temp & 1) {      
+                trailingOnes++;
+                temp >>= 1;          
+            }
+
+            if (trailingOnes == 0) {
+                ans[i] = -1;
+                continue;
+            }
+
+            int candidate = x - (1 << (trailingOnes - 1));
+
+            if ((candidate | (candidate + 1)) == x) {
+                ans[i] = candidate;
+            } else {
+                ans[i] = -1;
             }
         }
-        return answer;
+
+        return ans;
     }
 };
