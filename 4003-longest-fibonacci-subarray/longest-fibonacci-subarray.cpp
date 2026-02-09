@@ -5,15 +5,15 @@ public:
     int recursion(int idx, int next_idx, vector<int>& nums) {
         if (idx == nums.size())
             return 0;
-        if (dp[idx] != -1)
-            return dp[idx];
+        // if (dp[idx] != -1)
+        //     return dp[idx];
 
         int ans = 0;
         if (next_idx+1 < nums.size() &&
             (nums[idx] + nums[next_idx]) == nums[next_idx + 1]) {
             ans = 1 + recursion(next_idx, next_idx + 1, nums);
         }
-        return dp[idx] = ans;
+        return ans;
     }
     int longestSubarray(vector<int>& nums) {
         memset(dp, -1, sizeof(dp));
