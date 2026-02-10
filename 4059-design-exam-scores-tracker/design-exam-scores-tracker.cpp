@@ -1,7 +1,7 @@
 class ExamTracker {
 private:
     vector<pair<int, long long>> arr;
-    long long fn(vector<pair<int, long long>>& arr, int time) {
+    long long function(vector<pair<int, long long>>& arr, int time) {
         long long total= 0;
 
         int left = 0, right = arr.size() - 1;
@@ -34,8 +34,8 @@ private:
     }
 
     long long totalScore(int start, int end) {
-        long long left = fn(arr, start - 1);
-        long long right = fn(arr, end);
+        long long left = function(arr, start - 1);
+        long long right = function(arr, end);
 
         return right - left;
     }
