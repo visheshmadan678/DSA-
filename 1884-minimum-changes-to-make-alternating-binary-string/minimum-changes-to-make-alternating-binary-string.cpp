@@ -6,8 +6,7 @@ public:
         int ans = INT_MAX;
 
         // either i can start from the zero or either i can start from one
-        bool flag = false; int val1 = 0; int val2 = 0;
-
+        int val1 = 0; int val2 = 0;
         for(int i=0;i<s.length();i++){
             if((i % 2) != 0){
                 // means i dont want zeroes on odd indexs
