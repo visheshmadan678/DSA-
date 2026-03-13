@@ -10,7 +10,7 @@ public:
                 n++;
             }
             h += (n - 1);
-            if (h >= height) return true; // small optimization
+            if (h >= height) return true; 
         }
         return h >= height;
     }
@@ -18,7 +18,7 @@ public:
    long long h = he;
         long long low = 1;
         long long maxi = *max_element(workers.begin(), workers.end());
-        long long high = 1LL * maxi * (1LL * h * (h + 1)) / 2; // worst case bound
+        long long high = 1LL * maxi * (1LL * h * (h + 1)) / 2;
         long long ans = LLONG_MAX;
         while (low <= high) {
             long long mid = (low + high) / 2;
