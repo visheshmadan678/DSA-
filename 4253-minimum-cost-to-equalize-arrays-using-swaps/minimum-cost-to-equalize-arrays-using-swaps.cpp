@@ -14,7 +14,7 @@ public:
             mp2[it]++;
         }
 
-        // fill mp3 using mp1
+       
         for(auto &it:mp1){
             int ele = it.first;
             int freq1 = it.second;
@@ -22,7 +22,6 @@ public:
             mp3[ele] = {freq1,freq2};
         }
 
-        // add remaining elements from mp2
         for(auto &it:mp2){
             int ele = it.first;
             int freq2 = it.second;
