@@ -21,7 +21,6 @@ public:
             }else{
                 int current = it;
                 int diff = it - prev;
-                cout<<diff<<endl;
                 min_diff = min(min_diff,diff);
                 prev = current; // update the value of previous
             }
