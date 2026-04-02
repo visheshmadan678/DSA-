@@ -2,6 +2,7 @@ class Solution {
 public:
     int m1, n1;
     int dp[500][500][3];
+    //madarchod question
     int recursion(int i, int j, vector<vector<int>>& coins, int neutral) {
         if (i >= m1 || j >= n1)
             return INT_MIN/2;
