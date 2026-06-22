@@ -11,16 +11,12 @@ public:
         long long ans = INT_MAX;
 
         if(mp['b'] && mp['a'] && mp['l'] >= 2 && mp['o'] >= 2 && mp['n']){
-            ans = min(ans,mp['b']);
-            ans = min(ans,mp['a']);
-            ans = min(ans,mp['l'] / 2);
-            ans = min(ans,mp['o'] / 2);
-            ans = min(ans,mp['n']);
+            ans = min({mp['b'], mp['a'], mp['l'] / 2, mp['o'] / 2, mp['n']});
         }
         else{
             return 0;
         }
-
+        
         return ans; // return ans in the end 
     }   
 };
